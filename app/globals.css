@@ -300,7 +300,7 @@ nav ul li a:hover::before {
   text-decoration: underline;
 }
 
-/* Skills Section */
+/* Skills Section - Screenshot Style */
 .skills-section {
   margin-bottom: 60px;
 }
@@ -326,37 +326,79 @@ nav ul li a:hover::before {
   border-radius: 2px;
 }
 
-.skills-grid {
+.skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
-.skill-card {
+.skill-category {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
-  padding: 20px;
-  text-align: center;
+  padding: 25px;
   transition: 0.3s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.skill-card i {
-  font-size: 40px;
-  margin-bottom: 15px;
+.skill-category h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
   color: var(--primary-red);
+  text-align: center;
+  border-bottom: 2px solid var(--glass-border);
+  padding-bottom: 10px;
 }
 
-.skill-card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  transition: 0.3s;
+}
+
+.skill-item:hover {
+  background: rgba(230, 57, 70, 0.1);
+  transform: translateX(5px);
+}
+
+.skill-item i {
+  color: var(--primary-red);
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+.skill-item-content {
+  flex: 1;
+}
+
+.skill-item-content h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.skill-item-content p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0;
 }
 
 /* Projects Section */
@@ -563,8 +605,8 @@ footer {
     font-size: 28px;
   }
   
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  .skills-container {
+    grid-template-columns: 1fr;
   }
   
   .projects-grid {
