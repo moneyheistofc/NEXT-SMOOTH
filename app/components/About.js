@@ -5,13 +5,13 @@ export default function About() {
       <div className="about-content">
         <div className="about-image">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+            src="https://raw.githubusercontent.com/maverick455456/ADMINS/refs/heads/main/ADMIN-DP/MR NIPUN OFC.png" 
             alt="MR NIPUN" 
           />
         </div>
         <div className="about-info">
           <div className="info-item">
-            <strong>Name:</strong> H.M. NIPUN DHANUJAYA
+            <strong>Name:</strong> H.M.Nipun Dhanujaya
           </div>
           <div className="info-item">
             <strong>Age:</strong> 18
@@ -22,7 +22,7 @@ export default function About() {
           <div className="info-item">
             <strong>Contact:</strong> 
             <a href="https://wa.me/+94757255903" target="_blank">
-              +94 75 725 5903
+              +94757255903
             </a>
           </div>
           <div className="about-description">
