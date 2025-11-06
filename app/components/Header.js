@@ -4,6 +4,7 @@ import { useState } from 'react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSocialOpen, setIsSocialOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   return (
     <>
@@ -29,7 +30,11 @@ export default function Header() {
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul>
           <li><a href="/" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About Me</a></li>
+          <li>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsAboutOpen(true); setIsMenuOpen(false); }}>
+              About Me
+            </a>
+          </li>
           <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
           <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
           <li>
@@ -41,10 +46,104 @@ export default function Header() {
         </ul>
       </nav>
 
+      {/* About Me Modal */}
+      {isAboutOpen && (
+        <div className="modal-overlay" onClick={() => setIsAboutOpen(false)}>
+          <div className="modal-content about-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setIsAboutOpen(false)}>×</button>
+            
+            <div className="modal-header">
+              <div className="modal-profile">
+                <div className="modal-image-container">
+                  <div className="modal-light-ring"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                    alt="MR NIPUN" 
+                    className="modal-profile-image"
+                  />
+                </div>
+                <div className="modal-title">
+                  <h2>MR NIPUN OFC / TECH-WEB</h2>
+                  <p>Full Stack Developer & Designer</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="modal-body">
+              <div className="personal-info-grid">
+                <div className="info-card">
+                  <i className="fas fa-user"></i>
+                  <div>
+                    <strong>Name:</strong>
+                    <span>H.M. NIPUN DHANUJAYA</span>
+                  </div>
+                </div>
+                <div className="info-card">
+                  <i className="fas fa-birthday-cake"></i>
+                  <div>
+                    <strong>Age:</strong>
+                    <span>18 Years</span>
+                  </div>
+                </div>
+                <div className="info-card">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <div>
+                    <strong>Location:</strong>
+                    <span>Sri Lanka</span>
+                  </div>
+                </div>
+                <div className="info-card">
+                  <i className="fas fa-phone"></i>
+                  <div>
+                    <strong>Contact:</strong>
+                    <a href="https://wa.me/+94757255903" target="_blank">+94 75 725 5903</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="about-description">
+                <h3>About Me</h3>
+                <p>
+                  Hello! I'm <strong>MR NIPUN</strong>, a passionate full-stack developer and UI/UX designer 
+                  with expertise in creating modern web applications and digital experiences. 
+                  I specialize in building responsive websites, web applications, and IoT solutions.
+                </p>
+                <p>
+                  My technical skills include <strong>Java, Python, HTML/CSS, NextJS, Web Servers, 
+                  and Arduino Micro Devices</strong>. I'm also creatively skilled in <strong>photography, 
+                  animation creation, and logo design</strong>, which allows me to create visually 
+                  appealing and engaging digital content.
+                </p>
+                <p>
+                  My goal is to combine technical expertise with creative design to build 
+                  innovative solutions that solve real-world problems and provide exceptional 
+                  user experiences.
+                </p>
+              </div>
+
+              <div className="quick-stats">
+                <div className="stat-item">
+                  <div className="stat-number">50+</div>
+                  <div className="stat-label">Projects Completed</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">3+</div>
+                  <div className="stat-label">Years Experience</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">100%</div>
+                  <div className="stat-label">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Social Media Modal */}
       {isSocialOpen && (
         <div className="modal-overlay" onClick={() => setIsSocialOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content social-modal" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setIsSocialOpen(false)}>×</button>
             <h2>My Social Media</h2>
             <div className="social-grid">
@@ -86,4 +185,4 @@ export default function Header() {
       )}
     </>
   );
-              }
+                }
