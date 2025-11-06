@@ -50,7 +50,7 @@ export default function Header() {
             <span className="close-modal" onClick={closeModal}>&times;</span>
             <div className="modal-profile">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                src="https://raw.githubusercontent.com/maverick455456/ADMINS/refs/heads/main/ADMIN-DP/MR%20NIPUN%20OFC.png" 
                 alt="MR NIPUN" 
                 className="modal-profile-img"
               />
