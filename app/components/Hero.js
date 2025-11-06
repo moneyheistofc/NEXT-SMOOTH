@@ -9,12 +9,8 @@ export default function Hero() {
           className="profile-image"
         />
       </div>
-      <h1>MR NIPUN OFC</h1>
+      <h1>MR NIPUN OFC / TECH-WEB</h1>
       <p>Full Stack Developer | UI/UX Designer | Tech Enthusiast</p>
-      <div className="hero-buttons">
-        <a href="#projects" className="cta-button primary">View My Work</a>
-        <a href="#contact" className="cta-button">Get In Touch</a>
-      </div>
     </section>
   );
             }
