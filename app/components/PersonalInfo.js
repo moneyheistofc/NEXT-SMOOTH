@@ -6,7 +6,7 @@ export default function PersonalInfo() {
         <div className="info-item">
           <i className="fas fa-user"></i>
           <div>
-            <strong>Name:</strong> H.M.Nipun Dhanujaya
+            <strong>Name:</strong> H.M. NIPUN DHANUJAYA
           </div>
         </div>
         <div className="info-item">
@@ -26,11 +26,11 @@ export default function PersonalInfo() {
           <div>
             <strong>Contact:</strong> 
             <a href="https://wa.me/+94757255903" target="_blank">
-              +94757255903
+              +94 75 725 5903
             </a>
           </div>
         </div>
       </div>
     </section>
   );
-}
+    }
