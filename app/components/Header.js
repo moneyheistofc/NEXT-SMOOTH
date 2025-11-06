@@ -13,19 +13,8 @@ export default function Header() {
       }
     };
 
-    const handleClickOutside = (e) => {
-      if (e.target.classList.contains('modal')) {
-        setActiveModal(null);
-      }
-    };
-
     document.addEventListener('keydown', handleEscape);
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.removeEventListener('click', handleClickOutside);
-    };
+    return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
   useEffect(() => {
@@ -76,18 +65,21 @@ export default function Header() {
 
       {/* About Modal */}
       {activeModal === 'about' && (
-        <div className="modal active">
-          <div className="modal-content">
+        <div className="modal active" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-modal" onClick={closeModal}>&times;</button>
             <div className="modal-profile">
-              <img 
-                src="https://raw.githubusercontent.com/maverick455456/ADMINS/refs/heads/main/ADMIN-DP/MR%20NIPUN%20OFC.png" 
-                alt="MR NIPUN" 
-                className="modal-profile-img"
-              />
+              <div className="modal-profile-container">
+                <div className="modal-light-ring"></div>
+                <img 
+                  src="https://raw.githubusercontent.com/maverick455456/ADMINS/refs/heads/main/ADMIN-DP/MR%20NIPUN%20OFC.png" 
+                  alt="MR NIPUN" 
+                  className="modal-profile-image"
+                />
+              </div>
               <div className="modal-profile-info">
                 <h2>MR NIPUN</h2>
-                <p>Full Stack Developer & Designer</p>
+                <p>Full Stack Developer & UI/UX Designer</p>
               </div>
             </div>
             <div className="modal-body">
@@ -115,10 +107,13 @@ export default function Header() {
               </div>
               
               <div className="about-text">
-                <p>Hello! I'm MR NIPUN, a passionate full-stack developer and designer with expertise in creating modern web applications and digital experiences.</p>
-                <p>With a strong background in both frontend and backend technologies, I specialize in building responsive websites, web applications, and IoT solutions. My skills include Java, Python, HTML/CSS, NextJS, and working with Arduino micro devices.</p>
-                <p>I'm also skilled in photography, animation creation, and logo design, allowing me to create visually appealing and engaging digital content.</p>
-                <p>My goal is to combine technical expertise with creative design to build innovative solutions that solve real-world problems.</p>
+                <p>Hello! I'm <strong>MR NIPUN</strong>, a passionate full-stack developer and UI/UX designer with extensive expertise in creating modern, responsive web applications and digital experiences. With over 3 years of professional experience, I specialize in delivering high-quality solutions that combine technical excellence with creative design.</p>
+                
+                <p>My technical arsenal includes <strong>Java, Python, JavaScript, React, Next.js, Node.js, HTML5, CSS3</strong>, and expertise in working with <strong>Arduino micro devices</strong> for IoT solutions. I'm proficient in both frontend and backend development, ensuring seamless integration and optimal performance across all platforms.</p>
+                
+                <p>Beyond coding, I possess strong skills in <strong>photography, motion graphics animation, and professional logo design</strong>. This unique combination allows me to create visually stunning and highly engaging digital content that captivates users and enhances brand identity.</p>
+                
+                <p>My mission is to bridge the gap between technical functionality and aesthetic appeal, creating innovative digital solutions that not only solve complex problems but also provide exceptional user experiences. I'm committed to staying at the forefront of technology trends and continuously expanding my skill set to deliver cutting-edge solutions.</p>
               </div>
             </div>
           </div>
@@ -127,10 +122,11 @@ export default function Header() {
 
       {/* Social Media Modal */}
       {activeModal === 'social' && (
-        <div className="modal active">
-          <div className="modal-content">
+        <div className="modal active" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-modal" onClick={closeModal}>&times;</button>
-            <h2 style={{textAlign: 'center', marginBottom: '20px'}}>My Social Media</h2>
+            <h2 style={{textAlign: 'center', marginBottom: '10px', background: 'linear-gradient(45deg, var(--primary-red), var(--purple))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>My Social Media</h2>
+            <p style={{textAlign: 'center', color: 'var(--text-gray)', marginBottom: '30px'}}>Follow me on social media for updates and projects</p>
             <div className="social-grid">
               <a href="https://whatsapp.com/channel/0029Vb9bLMqGJP8GmAHxUd02/3683" target="_blank" className="social-item">
                 <i className="fab fa-whatsapp"></i>
@@ -167,12 +163,12 @@ export default function Header() {
 
       {/* Contact Modal */}
       {activeModal === 'contact' && (
-        <div className="modal active">
-          <div className="modal-content">
+        <div className="modal active" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-modal" onClick={closeModal}>&times;</button>
-            <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Contact Me</h2>
+            <h2 style={{textAlign: 'center', marginBottom: '10px', background: 'linear-gradient(45deg, var(--primary-red), var(--purple))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Get In Touch</h2>
+            <p style={{textAlign: 'center', color: 'var(--text-gray)', marginBottom: '30px'}}>Let's discuss your next project</p>
             <div className="modal-body">
-              <p>If you'd like to get in touch with me, please use the following contact information:</p>
               <div className="contact-info">
                 <ul>
                   <li>
@@ -196,13 +192,20 @@ export default function Header() {
                       <span>Sri Lanka</span>
                     </div>
                   </li>
+                  <li>
+                    <i className="fas fa-clock"></i>
+                    <div>
+                      <strong>Availability:</strong> 
+                      <span>24/7 for Freelance Projects</span>
+                    </div>
+                  </li>
                 </ul>
               </div>
-              <p>You can also reach out to me through my social media profiles for a quicker response.</p>
+              <p style={{textAlign: 'center', lineHeight: '1.6', fontSize: '16px', color: 'var(--text-light)'}}>Feel free to reach out for collaborations, freelance opportunities, or just to say hello! I'm always excited to work on new projects and connect with like-minded individuals.</p>
             </div>
           </div>
         </div>
       )}
     </>
   );
-    }
+}
