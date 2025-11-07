@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'MR NIPUN OFC / TECH-WEB',
+  title: 'MR NIPUN OFC / N-TECH',
   description: 'Full Stack Developer | UI/UX Designer | Tech Enthusiast',
 }
 
