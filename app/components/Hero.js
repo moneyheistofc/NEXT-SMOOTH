@@ -9,7 +9,7 @@ export default function Hero() {
           className="profile-image"
         />
       </div>
-      <h1>MR NIPUN OFC / TECH-WEB</h1>
+      <h1>MR NIPUN OFC / TECH WEB</h1>
       <p>Full Stack Developer | UI/UX Designer | Tech Enthusiast</p>
     </section>
   );
