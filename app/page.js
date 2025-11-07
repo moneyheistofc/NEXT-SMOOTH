@@ -46,11 +46,15 @@ export default function Home() {
 
   // Modal functions
   const openModal = (modalId) => {
-    document.getElementById(modalId).classList.add('active');
+    if (typeof document !== 'undefined') {
+      document.getElementById(modalId).classList.add('active');
+    }
   };
 
   const closeModal = (modalId) => {
-    document.getElementById(modalId).classList.remove('active');
+    if (typeof document !== 'undefined') {
+      document.getElementById(modalId).classList.remove('active');
+    }
   };
 
   // Navigation functions
@@ -308,4 +312,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
+    }
